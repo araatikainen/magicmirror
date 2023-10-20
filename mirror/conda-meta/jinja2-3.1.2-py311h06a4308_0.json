@@ -1,0 +1,518 @@
+{
+  "build": "py311h06a4308_0",
+  "build_number": 0,
+  "channel": "https://repo.anaconda.com/pkgs/main/linux-64",
+  "constrains": [],
+  "depends": [
+    "markupsafe >=2.0",
+    "python >=3.11,<3.12.0a0"
+  ],
+  "extracted_package_dir": "/home/raati/anaconda3/pkgs/jinja2-3.1.2-py311h06a4308_0",
+  "features": "",
+  "files": [
+    "lib/python3.11/site-packages/Jinja2-3.1.2.dist-info/INSTALLER",
+    "lib/python3.11/site-packages/Jinja2-3.1.2.dist-info/LICENSE.rst",
+    "lib/python3.11/site-packages/Jinja2-3.1.2.dist-info/METADATA",
+    "lib/python3.11/site-packages/Jinja2-3.1.2.dist-info/RECORD",
+    "lib/python3.11/site-packages/Jinja2-3.1.2.dist-info/REQUESTED",
+    "lib/python3.11/site-packages/Jinja2-3.1.2.dist-info/WHEEL",
+    "lib/python3.11/site-packages/Jinja2-3.1.2.dist-info/direct_url.json",
+    "lib/python3.11/site-packages/Jinja2-3.1.2.dist-info/entry_points.txt",
+    "lib/python3.11/site-packages/Jinja2-3.1.2.dist-info/top_level.txt",
+    "lib/python3.11/site-packages/jinja2/__init__.py",
+    "lib/python3.11/site-packages/jinja2/__pycache__/__init__.cpython-311.pyc",
+    "lib/python3.11/site-packages/jinja2/__pycache__/_identifier.cpython-311.pyc",
+    "lib/python3.11/site-packages/jinja2/__pycache__/async_utils.cpython-311.pyc",
+    "lib/python3.11/site-packages/jinja2/__pycache__/bccache.cpython-311.pyc",
+    "lib/python3.11/site-packages/jinja2/__pycache__/compiler.cpython-311.pyc",
+    "lib/python3.11/site-packages/jinja2/__pycache__/constants.cpython-311.pyc",
+    "lib/python3.11/site-packages/jinja2/__pycache__/debug.cpython-311.pyc",
+    "lib/python3.11/site-packages/jinja2/__pycache__/defaults.cpython-311.pyc",
+    "lib/python3.11/site-packages/jinja2/__pycache__/environment.cpython-311.pyc",
+    "lib/python3.11/site-packages/jinja2/__pycache__/exceptions.cpython-311.pyc",
+    "lib/python3.11/site-packages/jinja2/__pycache__/ext.cpython-311.pyc",
+    "lib/python3.11/site-packages/jinja2/__pycache__/filters.cpython-311.pyc",
+    "lib/python3.11/site-packages/jinja2/__pycache__/idtracking.cpython-311.pyc",
+    "lib/python3.11/site-packages/jinja2/__pycache__/lexer.cpython-311.pyc",
+    "lib/python3.11/site-packages/jinja2/__pycache__/loaders.cpython-311.pyc",
+    "lib/python3.11/site-packages/jinja2/__pycache__/meta.cpython-311.pyc",
+    "lib/python3.11/site-packages/jinja2/__pycache__/nativetypes.cpython-311.pyc",
+    "lib/python3.11/site-packages/jinja2/__pycache__/nodes.cpython-311.pyc",
+    "lib/python3.11/site-packages/jinja2/__pycache__/optimizer.cpython-311.pyc",
+    "lib/python3.11/site-packages/jinja2/__pycache__/parser.cpython-311.pyc",
+    "lib/python3.11/site-packages/jinja2/__pycache__/runtime.cpython-311.pyc",
+    "lib/python3.11/site-packages/jinja2/__pycache__/sandbox.cpython-311.pyc",
+    "lib/python3.11/site-packages/jinja2/__pycache__/tests.cpython-311.pyc",
+    "lib/python3.11/site-packages/jinja2/__pycache__/utils.cpython-311.pyc",
+    "lib/python3.11/site-packages/jinja2/__pycache__/visitor.cpython-311.pyc",
+    "lib/python3.11/site-packages/jinja2/_identifier.py",
+    "lib/python3.11/site-packages/jinja2/async_utils.py",
+    "lib/python3.11/site-packages/jinja2/bccache.py",
+    "lib/python3.11/site-packages/jinja2/compiler.py",
+    "lib/python3.11/site-packages/jinja2/constants.py",
+    "lib/python3.11/site-packages/jinja2/debug.py",
+    "lib/python3.11/site-packages/jinja2/defaults.py",
+    "lib/python3.11/site-packages/jinja2/environment.py",
+    "lib/python3.11/site-packages/jinja2/exceptions.py",
+    "lib/python3.11/site-packages/jinja2/ext.py",
+    "lib/python3.11/site-packages/jinja2/filters.py",
+    "lib/python3.11/site-packages/jinja2/idtracking.py",
+    "lib/python3.11/site-packages/jinja2/lexer.py",
+    "lib/python3.11/site-packages/jinja2/loaders.py",
+    "lib/python3.11/site-packages/jinja2/meta.py",
+    "lib/python3.11/site-packages/jinja2/nativetypes.py",
+    "lib/python3.11/site-packages/jinja2/nodes.py",
+    "lib/python3.11/site-packages/jinja2/optimizer.py",
+    "lib/python3.11/site-packages/jinja2/parser.py",
+    "lib/python3.11/site-packages/jinja2/py.typed",
+    "lib/python3.11/site-packages/jinja2/runtime.py",
+    "lib/python3.11/site-packages/jinja2/sandbox.py",
+    "lib/python3.11/site-packages/jinja2/tests.py",
+    "lib/python3.11/site-packages/jinja2/utils.py",
+    "lib/python3.11/site-packages/jinja2/visitor.py"
+  ],
+  "fn": "jinja2-3.1.2-py311h06a4308_0.conda",
+  "legacy_bz2_md5": "aae6e7fc8df184bd49ab795f8991eb91",
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "link": {
+    "source": "/home/raati/anaconda3/pkgs/jinja2-3.1.2-py311h06a4308_0",
+    "type": 1
+  },
+  "md5": "1173c148bd36cfc89283992fb37ef859",
+  "name": "jinja2",
+  "package_tarball_full_path": "/home/raati/anaconda3/pkgs/jinja2-3.1.2-py311h06a4308_0.conda",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "lib/python3.11/site-packages/Jinja2-3.1.2.dist-info/INSTALLER",
+        "path_type": "hardlink",
+        "sha256": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+        "sha256_in_prefix": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+        "size_in_bytes": 5
+      },
+      {
+        "_path": "lib/python3.11/site-packages/Jinja2-3.1.2.dist-info/LICENSE.rst",
+        "path_type": "hardlink",
+        "sha256": "3b49dcee4105eb37bac10faf1be260408fe85d252b8e9df2e0979fc1e094437b",
+        "sha256_in_prefix": "3b49dcee4105eb37bac10faf1be260408fe85d252b8e9df2e0979fc1e094437b",
+        "size_in_bytes": 1475
+      },
+      {
+        "_path": "lib/python3.11/site-packages/Jinja2-3.1.2.dist-info/METADATA",
+        "path_type": "hardlink",
+        "sha256": "d46ca0ffe4d0b7f62089a0b0ca0a9d0bca95cad4b40f3bb0578654c619378491",
+        "sha256_in_prefix": "d46ca0ffe4d0b7f62089a0b0ca0a9d0bca95cad4b40f3bb0578654c619378491",
+        "size_in_bytes": 3519
+      },
+      {
+        "_path": "lib/python3.11/site-packages/Jinja2-3.1.2.dist-info/RECORD",
+        "path_type": "hardlink",
+        "sha256": "fc82219ea215c32a52e56200cb44301603e55f43b251a4fd98d5b089034b4fc8",
+        "sha256_in_prefix": "fc82219ea215c32a52e56200cb44301603e55f43b251a4fd98d5b089034b4fc8",
+        "size_in_bytes": 3882
+      },
+      {
+        "_path": "lib/python3.11/site-packages/Jinja2-3.1.2.dist-info/REQUESTED",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0
+      },
+      {
+        "_path": "lib/python3.11/site-packages/Jinja2-3.1.2.dist-info/WHEEL",
+        "path_type": "hardlink",
+        "sha256": "1b5e87e00dc87a84269cead8578b9e6462928e18a95f1f3373c9eef451a5bcc0",
+        "sha256_in_prefix": "1b5e87e00dc87a84269cead8578b9e6462928e18a95f1f3373c9eef451a5bcc0",
+        "size_in_bytes": 92
+      },
+      {
+        "_path": "lib/python3.11/site-packages/Jinja2-3.1.2.dist-info/direct_url.json",
+        "path_type": "hardlink",
+        "sha256": "9ae49c855bbc1a132579895ef94ef3842c235231fcc19f0366d7bbf4ec048a6f",
+        "sha256_in_prefix": "9ae49c855bbc1a132579895ef94ef3842c235231fcc19f0366d7bbf4ec048a6f",
+        "size_in_bytes": 74
+      },
+      {
+        "_path": "lib/python3.11/site-packages/Jinja2-3.1.2.dist-info/entry_points.txt",
+        "path_type": "hardlink",
+        "sha256": "cd177ad9f6ea2327d4a6c46d53b115205ca2bb5b4fc1f80eec4bcf12b9f18131",
+        "sha256_in_prefix": "cd177ad9f6ea2327d4a6c46d53b115205ca2bb5b4fc1f80eec4bcf12b9f18131",
+        "size_in_bytes": 59
+      },
+      {
+        "_path": "lib/python3.11/site-packages/Jinja2-3.1.2.dist-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "3e47955ad2dbdfe0aa8d68b57cedbd3826e3e791215ff72184aac276b55eff3b",
+        "sha256_in_prefix": "3e47955ad2dbdfe0aa8d68b57cedbd3826e3e791215ff72184aac276b55eff3b",
+        "size_in_bytes": 7
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "f2f19db83f32b70803e860d2aa961cda6dda53e4fb3ca38075dbd55e01abfc5b",
+        "sha256_in_prefix": "f2f19db83f32b70803e860d2aa961cda6dda53e4fb3ca38075dbd55e01abfc5b",
+        "size_in_bytes": 1927
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/__pycache__/__init__.cpython-311.pyc",
+        "path_type": "hardlink",
+        "sha256": "d915b6fefbcf7869238c7cbdd80a6e8f46523b9f488d7826b6fb997f06d501b0",
+        "sha256_in_prefix": "d915b6fefbcf7869238c7cbdd80a6e8f46523b9f488d7826b6fb997f06d501b0",
+        "size_in_bytes": 2089
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/__pycache__/_identifier.cpython-311.pyc",
+        "path_type": "hardlink",
+        "sha256": "666e38f0fd3bf390520d678134a1f06d2f2303922a15f7c5b29005dc75a64696",
+        "sha256_in_prefix": "666e38f0fd3bf390520d678134a1f06d2f2303922a15f7c5b29005dc75a64696",
+        "size_in_bytes": 2105
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/__pycache__/async_utils.cpython-311.pyc",
+        "path_type": "hardlink",
+        "sha256": "d3bf3fad161dfa553d5c5a8cf506fe40a19b8470beaeefc01aaa22b23d7c936d",
+        "sha256_in_prefix": "d3bf3fad161dfa553d5c5a8cf506fe40a19b8470beaeefc01aaa22b23d7c936d",
+        "size_in_bytes": 4611
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/__pycache__/bccache.cpython-311.pyc",
+        "path_type": "hardlink",
+        "sha256": "c974c7cbbb4c67998e50058be257c96183e64863ef1d8c3bb9c1e8b981d2c458",
+        "sha256_in_prefix": "c974c7cbbb4c67998e50058be257c96183e64863ef1d8c3bb9c1e8b981d2c458",
+        "size_in_bytes": 20938
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/__pycache__/compiler.cpython-311.pyc",
+        "path_type": "hardlink",
+        "sha256": "212c7ece348583b889e50c78614f4625e7c1d41a0e58c6d83a8feb70e6b73295",
+        "sha256_in_prefix": "212c7ece348583b889e50c78614f4625e7c1d41a0e58c6d83a8feb70e6b73295",
+        "size_in_bytes": 110672
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/__pycache__/constants.cpython-311.pyc",
+        "path_type": "hardlink",
+        "sha256": "2d064d1d381cf3d423809d8a9a130771963a86457f1015252c8fb21454831dc0",
+        "sha256_in_prefix": "2d064d1d381cf3d423809d8a9a130771963a86457f1015252c8fb21454831dc0",
+        "size_in_bytes": 1524
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/__pycache__/debug.cpython-311.pyc",
+        "path_type": "hardlink",
+        "sha256": "13af03404a991b66d25d4296e2ef3fe9730b974933594482c80107fbe9e990f7",
+        "sha256_in_prefix": "13af03404a991b66d25d4296e2ef3fe9730b974933594482c80107fbe9e990f7",
+        "size_in_bytes": 6713
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/__pycache__/defaults.cpython-311.pyc",
+        "path_type": "hardlink",
+        "sha256": "35c9a04018654afe1cf85e4cdab0012874bff1c24587aa05e10f66f52d2e3d73",
+        "sha256_in_prefix": "35c9a04018654afe1cf85e4cdab0012874bff1c24587aa05e10f66f52d2e3d73",
+        "size_in_bytes": 1690
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/__pycache__/environment.cpython-311.pyc",
+        "path_type": "hardlink",
+        "sha256": "5189ccad3bb714653b59a97818ff03603cb59d5c6dbaf2f020b18ac7dc6f3b65",
+        "sha256_in_prefix": "5189ccad3bb714653b59a97818ff03603cb59d5c6dbaf2f020b18ac7dc6f3b65",
+        "size_in_bytes": 80628
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/__pycache__/exceptions.cpython-311.pyc",
+        "path_type": "hardlink",
+        "sha256": "852e085e70b594d370755cbd1bc6965da22800b8e3fe88869c2956471de61705",
+        "sha256_in_prefix": "852e085e70b594d370755cbd1bc6965da22800b8e3fe88869c2956471de61705",
+        "size_in_bytes": 8584
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/__pycache__/ext.cpython-311.pyc",
+        "path_type": "hardlink",
+        "sha256": "35943a01b22b305a0723a3b412a7516c1fb8492773adb5d010686d7c009c5595",
+        "sha256_in_prefix": "35943a01b22b305a0723a3b412a7516c1fb8492773adb5d010686d7c009c5595",
+        "size_in_bytes": 43249
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/__pycache__/filters.cpython-311.pyc",
+        "path_type": "hardlink",
+        "sha256": "68069e28383aaa1936e67b64fbbe40156e0bb1e30b95656a7e7e25d6d5e9a015",
+        "sha256_in_prefix": "68069e28383aaa1936e67b64fbbe40156e0bb1e30b95656a7e7e25d6d5e9a015",
+        "size_in_bytes": 75949
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/__pycache__/idtracking.cpython-311.pyc",
+        "path_type": "hardlink",
+        "sha256": "9d62a430f7949fa30f60dfa8258bfd783e5dcd61f0b9786870ed606c539e59db",
+        "sha256_in_prefix": "9d62a430f7949fa30f60dfa8258bfd783e5dcd61f0b9786870ed606c539e59db",
+        "size_in_bytes": 19584
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/__pycache__/lexer.cpython-311.pyc",
+        "path_type": "hardlink",
+        "sha256": "4104afd724f0cede0412564840d3d039dd751606d3605e1657edff5a11d92f66",
+        "sha256_in_prefix": "4104afd724f0cede0412564840d3d039dd751606d3605e1657edff5a11d92f66",
+        "size_in_bytes": 35707
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/__pycache__/loaders.cpython-311.pyc",
+        "path_type": "hardlink",
+        "sha256": "299f84584efd0ed6c7bc31cd24d33b934f528b5cd7523d7b3fd36b890b6f7f90",
+        "sha256_in_prefix": "299f84584efd0ed6c7bc31cd24d33b934f528b5cd7523d7b3fd36b890b6f7f90",
+        "size_in_bytes": 33105
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/__pycache__/meta.cpython-311.pyc",
+        "path_type": "hardlink",
+        "sha256": "72a4319cc8ac9f589ad028b7c7e8fdc970edbe2d04f252514d4a51a987937ea7",
+        "sha256_in_prefix": "72a4319cc8ac9f589ad028b7c7e8fdc970edbe2d04f252514d4a51a987937ea7",
+        "size_in_bytes": 5673
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/__pycache__/nativetypes.cpython-311.pyc",
+        "path_type": "hardlink",
+        "sha256": "6d3835348fdbf8a9f4adaf2fb95b8ea44595eb0d96db24a918571aea65dc9be1",
+        "sha256_in_prefix": "6d3835348fdbf8a9f4adaf2fb95b8ea44595eb0d96db24a918571aea65dc9be1",
+        "size_in_bytes": 7942
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/__pycache__/nodes.cpython-311.pyc",
+        "path_type": "hardlink",
+        "sha256": "45a8ccbe3953ba45e070ac5814cbb17cf936c86e67b869b2e0e3c87670930616",
+        "sha256_in_prefix": "45a8ccbe3953ba45e070ac5814cbb17cf936c86e67b869b2e0e3c87670930616",
+        "size_in_bytes": 64527
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/__pycache__/optimizer.cpython-311.pyc",
+        "path_type": "hardlink",
+        "sha256": "1029bb325cea31b464af99ce48a7c37382aaaef96bb613881ef75bfe7d4c62ae",
+        "sha256_in_prefix": "1029bb325cea31b464af99ce48a7c37382aaaef96bb613881ef75bfe7d4c62ae",
+        "size_in_bytes": 2820
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/__pycache__/parser.cpython-311.pyc",
+        "path_type": "hardlink",
+        "sha256": "72c73167d65d3f42bca6382934582c600c469f486034eb079ce5e6fb8d06a969",
+        "sha256_in_prefix": "72c73167d65d3f42bca6382934582c600c469f486034eb079ce5e6fb8d06a969",
+        "size_in_bytes": 59489
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/__pycache__/runtime.cpython-311.pyc",
+        "path_type": "hardlink",
+        "sha256": "965c88bfb88b556333bf55d3b2e81700c9478eda06bc1a45a4ffe676b056e807",
+        "sha256_in_prefix": "965c88bfb88b556333bf55d3b2e81700c9478eda06bc1a45a4ffe676b056e807",
+        "size_in_bytes": 50689
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/__pycache__/sandbox.cpython-311.pyc",
+        "path_type": "hardlink",
+        "sha256": "578d3b652a7f1e9f1a177604347414b467be675289973f2978e0970d626e1733",
+        "sha256_in_prefix": "578d3b652a7f1e9f1a177604347414b467be675289973f2978e0970d626e1733",
+        "size_in_bytes": 18822
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/__pycache__/tests.cpython-311.pyc",
+        "path_type": "hardlink",
+        "sha256": "ce57ae12d21e708b91e07be98474cfae40e2ebd49e54ba7f0d1f477624f7c000",
+        "sha256_in_prefix": "ce57ae12d21e708b91e07be98474cfae40e2ebd49e54ba7f0d1f477624f7c000",
+        "size_in_bytes": 9211
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/__pycache__/utils.cpython-311.pyc",
+        "path_type": "hardlink",
+        "sha256": "db5a55cd6884555f44b45fd97f25e84cde776205055363986b31a183bd0e8f50",
+        "sha256_in_prefix": "db5a55cd6884555f44b45fd97f25e84cde776205055363986b31a183bd0e8f50",
+        "size_in_bytes": 37086
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/__pycache__/visitor.cpython-311.pyc",
+        "path_type": "hardlink",
+        "sha256": "575a8757e8caf4b90234274a46a3664e8acd8b96d38aa05472ddcbf170458d11",
+        "sha256_in_prefix": "575a8757e8caf4b90234274a46a3664e8acd8b96d38aa05472ddcbf170458d11",
+        "size_in_bytes": 5688
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/_identifier.py",
+        "path_type": "hardlink",
+        "sha256": "ff361cb4d2b346a964fe6bab4cd973ae3bb514524bed56bf223aaa77b8a2da55",
+        "sha256_in_prefix": "ff361cb4d2b346a964fe6bab4cd973ae3bb514524bed56bf223aaa77b8a2da55",
+        "size_in_bytes": 1958
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/async_utils.py",
+        "path_type": "hardlink",
+        "sha256": "74795b4de6b114fb40390118386621fcf1dc0d3d2bb0369424014397fd17b538",
+        "sha256_in_prefix": "74795b4de6b114fb40390118386621fcf1dc0d3d2bb0369424014397fd17b538",
+        "size_in_bytes": 2472
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/bccache.py",
+        "path_type": "hardlink",
+        "sha256": "9a1cf9c6d2f109c1d101ae7a6b33a1a612007b5f6ed707b4a2389f34c0a50e2a",
+        "sha256_in_prefix": "9a1cf9c6d2f109c1d101ae7a6b33a1a612007b5f6ed707b4a2389f34c0a50e2a",
+        "size_in_bytes": 14061
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/compiler.py",
+        "path_type": "hardlink",
+        "sha256": "1acf8df13849ece58ae3eade2a83bc5a1d595f3f79315a6104a3557fbe6a06bf",
+        "sha256_in_prefix": "1acf8df13849ece58ae3eade2a83bc5a1d595f3f79315a6104a3557fbe6a06bf",
+        "size_in_bytes": 72172
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/constants.py",
+        "path_type": "hardlink",
+        "sha256": "18ca05c9d045fe476969128fa0ce5c97932f8aab9544b57266d7e9e7ed7a8e0d",
+        "sha256_in_prefix": "18ca05c9d045fe476969128fa0ce5c97932f8aab9544b57266d7e9e7ed7a8e0d",
+        "size_in_bytes": 1433
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/debug.py",
+        "path_type": "hardlink",
+        "sha256": "896278df645a77124d9da30e3eb8c80c89f3e745048278b7fc72ae1578b6bee4",
+        "sha256_in_prefix": "896278df645a77124d9da30e3eb8c80c89f3e745048278b7fc72ae1578b6bee4",
+        "size_in_bytes": 6299
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/defaults.py",
+        "path_type": "hardlink",
+        "sha256": "6e805c4b0efc87e969db461b697489b2a900236b8dfe60ff4ed0b27697aae705",
+        "sha256_in_prefix": "6e805c4b0efc87e969db461b697489b2a900236b8dfe60ff4ed0b27697aae705",
+        "size_in_bytes": 1267
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/environment.py",
+        "path_type": "hardlink",
+        "sha256": "eae1c871ced96e5a8e31dc7fb9834aa919e7c00174fe7cdbc9e30ff4516dba1e",
+        "sha256_in_prefix": "eae1c871ced96e5a8e31dc7fb9834aa919e7c00174fe7cdbc9e30ff4516dba1e",
+        "size_in_bytes": 61349
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/exceptions.py",
+        "path_type": "hardlink",
+        "sha256": "8a81de1eb5b009635a5d7d629c798755b96f73885a3bb017b230a9dc67d6bf1d",
+        "sha256_in_prefix": "8a81de1eb5b009635a5d7d629c798755b96f73885a3bb017b230a9dc67d6bf1d",
+        "size_in_bytes": 5071
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/ext.py",
+        "path_type": "hardlink",
+        "sha256": "8afaf73fb2ca6dd7625c355ecf6d047e570edead9a1d0c33f4ffcf81618756a1",
+        "sha256_in_prefix": "8afaf73fb2ca6dd7625c355ecf6d047e570edead9a1d0c33f4ffcf81618756a1",
+        "size_in_bytes": 31502
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/filters.py",
+        "path_type": "hardlink",
+        "sha256": "f63b3557e876465c96f742212e20462ccd94fa4e920b2d85e015143200772bd4",
+        "sha256_in_prefix": "f63b3557e876465c96f742212e20462ccd94fa4e920b2d85e015143200772bd4",
+        "size_in_bytes": 53509
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/idtracking.py",
+        "path_type": "hardlink",
+        "sha256": "19f36669d8abe280c02d5c739f70cbf582278490ebebd79b5de036ca07ee0860",
+        "sha256_in_prefix": "19f36669d8abe280c02d5c739f70cbf582278490ebebd79b5de036ca07ee0860",
+        "size_in_bytes": 10704
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/lexer.py",
+        "path_type": "hardlink",
+        "sha256": "0d6da75fdce4fba316a7ae584766eaaa3d31a82bcbb43faef4d593f009c54714",
+        "sha256_in_prefix": "0d6da75fdce4fba316a7ae584766eaaa3d31a82bcbb43faef4d593f009c54714",
+        "size_in_bytes": 29726
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/loaders.py",
+        "path_type": "hardlink",
+        "sha256": "05fa6d7ef4d5a4295477e95e3241dccddc8f358173a7f9fb3ca389f7c8b21ce8",
+        "sha256_in_prefix": "05fa6d7ef4d5a4295477e95e3241dccddc8f358173a7f9fb3ca389f7c8b21ce8",
+        "size_in_bytes": 23207
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/meta.py",
+        "path_type": "hardlink",
+        "sha256": "18d3c4be27e649a53708cc656e17813998de676efb1d384e3d44dfd51929a4a4",
+        "sha256_in_prefix": "18d3c4be27e649a53708cc656e17813998de676efb1d384e3d44dfd51929a4a4",
+        "size_in_bytes": 4396
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/nativetypes.py",
+        "path_type": "hardlink",
+        "sha256": "0d780e4433d19955a0cb4df81f4c4bf1e17ba98a0adc3accc6cfbddf97741739",
+        "sha256_in_prefix": "0d780e4433d19955a0cb4df81f4c4bf1e17ba98a0adc3accc6cfbddf97741739",
+        "size_in_bytes": 4226
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/nodes.py",
+        "path_type": "hardlink",
+        "sha256": "8b7e063d10197b15cc4fa6f0b9fe52132bdd992f9b442cbd28c8f03793baa639",
+        "sha256_in_prefix": "8b7e063d10197b15cc4fa6f0b9fe52132bdd992f9b442cbd28c8f03793baa639",
+        "size_in_bytes": 34550
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/optimizer.py",
+        "path_type": "hardlink",
+        "sha256": "b4790cc17c5f6646df0352a62dcaa604c49acfb44b22fbc8b6b25c3e85d3c83f",
+        "sha256_in_prefix": "b4790cc17c5f6646df0352a62dcaa604c49acfb44b22fbc8b6b25c3e85d3c83f",
+        "size_in_bytes": 1650
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/parser.py",
+        "path_type": "hardlink",
+        "sha256": "9c777e0c51db8b282f7da3ed9bdadc4172428591bb0cfb167e212ca9fc0a7ab6",
+        "sha256_in_prefix": "9c777e0c51db8b282f7da3ed9bdadc4172428591bb0cfb167e212ca9fc0a7ab6",
+        "size_in_bytes": 39595
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/py.typed",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/runtime.py",
+        "path_type": "hardlink",
+        "sha256": "e42983e418db109c5288335314178a09aabca94e1a603dafeaad8496ec84c66b",
+        "sha256_in_prefix": "e42983e418db109c5288335314178a09aabca94e1a603dafeaad8496ec84c66b",
+        "size_in_bytes": 33476
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/sandbox.py",
+        "path_type": "hardlink",
+        "sha256": "634c597974271fa117e558da576622c444b1a1ea6745b5bfdd4790a2c6815373",
+        "sha256_in_prefix": "634c597974271fa117e558da576622c444b1a1ea6745b5bfdd4790a2c6815373",
+        "size_in_bytes": 14584
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/tests.py",
+        "path_type": "hardlink",
+        "sha256": "026e59e8b99faf65da1ff9e921f249f0c757b56b1b2e33142d926e953023df41",
+        "sha256_in_prefix": "026e59e8b99faf65da1ff9e921f249f0c757b56b1b2e33142d926e953023df41",
+        "size_in_bytes": 5905
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/utils.py",
+        "path_type": "hardlink",
+        "sha256": "bbd8d7112c469fc01364d5689709a48d456ee1203eb4b815d16ecf7127cf7dd4",
+        "sha256_in_prefix": "bbd8d7112c469fc01364d5689709a48d456ee1203eb4b815d16ecf7127cf7dd4",
+        "size_in_bytes": 23965
+      },
+      {
+        "_path": "lib/python3.11/site-packages/jinja2/visitor.py",
+        "path_type": "hardlink",
+        "sha256": "307d780bacaadb81bf295b56ce3c1a23b5a0d783c2248625596d64a64c586a4d",
+        "sha256_in_prefix": "307d780bacaadb81bf295b56ce3c1a23b5a0d783c2248625596d64a64c586a4d",
+        "size_in_bytes": 3568
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "None",
+  "sha256": "cfee934819348c23c5b61db964430ca971dc04f983c4af7d6870f096ddeac88b",
+  "size": 301741,
+  "subdir": "linux-64",
+  "timestamp": 1676823601235,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/linux-64/jinja2-3.1.2-py311h06a4308_0.conda",
+  "version": "3.1.2"
+}

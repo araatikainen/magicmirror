@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <title>Info Screen</title>
+</head>
+<body>
+    <div class="top">
+        <div class="topText" id="phrase"> phrase here</div>
+
+        <div class='time'>
+            <div class="timeHours" id="clock">H:M:S</div>
+            <div class="timeDate" id="date">D.M.Y</div>
+    
+       </div>
+    </div>
+
+   <div class="content">
+
+    <div class="unisafka">
+        <div class="restaurant-header" id="hertsi-header">Hertsi</div>
+        <div class="restaurant" id="hertsi"></div>
+
+        <div class="restaurant-header" id="newton-header">Newton</div>
+        <div class="restaurant" id="newton"></div>
+
+        <div class="restaurant-header" id="konehuone-header">Konehuone</div>
+        <div class="restaurant" id="konehuone"></div>
+
+        <div class="restaurant-header" id="reaktori-header">Reaktori</div>
+        <div class="restaurant" id="reaktori"></div>
+    </div>
+       
+       <div class="rightside">
+
+           <div class="weather">
+               <div class="temp" id="temp"> weather</div>
+            </div>
+            
+            <div class="nysse">
+                <div class="timetable" id="table">nysse</div>
+            </div>
+        </div>
+   </div>
+
+   
+
+<script>
+    var clock = document.getElementById("clock");
+    var date = document.getElementById("date");
+    setInterval(() => {
+        fetch("{{ url_for('time_feed') }}")
+        .then(response => {
+                response.text().then(t => {
+                    console.log("Data received:",t);
+                    var lines = t.split('\n');
+                    clock.innerHTML = lines[0];
+                    date.innerHTML = lines[1];
+                })
+            });
+        }, 1000);  
+</script>
+<script>
+    var phrase = document.getElementById("phrase");
+    setInterval(() => {
+        fetch("{{ url_for('phrases')}}")
+        .then(response => {
+            response.text().then(t => {
+                phrase.innerHTML = t
+            })
+        })
+    }, 2000 )
+</script>
+<script>
+    
+    // check if local storage has been updated today
+    const lastExecuted = localStorage.getItem('lastExecuted');
+    const timeNow = new Date().getTime();
+    const dayMilliSecs = 1000 * 60 * 60 * 24;
+
+    console.log("Fetching menu data...");
+    if(!lastExecuted || timeNow - lastExecuted < dayMilliSecs) {
+
+    fetch("{{ url_for('menu')}}")
+        .then(response => response.json())  // Parse JSON response
+        .then(data => {
+            // Iterate through restaurant data and update HTML elements
+            data.forEach(restaurant => {
+                const restaurantName = restaurant.name.includes('Konehuone') ? "Konehuone" : restaurant.name;
+                const isOpenToday = restaurant.open_today;
+                const eatingHours = restaurant.eating_hours;
+                const menuItems = restaurant.menu;
+
+                // Update HTML elements with restaurant information
+                const restaurantElement = document.getElementById(restaurantName.toLowerCase());
+                const restaurantHeaderElement = document.getElementById(restaurantName.toLowerCase() + "-header");
+                if (restaurantElement && restaurantHeaderElement) {
+                    restaurantHeaderElement.innerHTML =
+                    `<strong>${restaurantName}</strong> ${eatingHours}<br>`;
+
+                    restaurantElement.innerHTML = menuItems.map(item => item[1]).join('<br>');
+                }   
+            });
+
+            // store current time to local storage
+            localStorage.setItem('lastExecuted', timeNow);
+        })
+        .catch(error => {
+            console.error("Error fetching menu data:", error);
+        });
+
+    }
+</script>
+
+</body>
+</html>

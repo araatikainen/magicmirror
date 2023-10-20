@@ -1,0 +1,109 @@
+body {
+    background-color: rgb(16, 14, 14);
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.top {
+    text-align: center;
+    margin-top: 10px;
+    height: 340px;
+}
+
+.topText {
+    color: rgb(157, 155, 155);;
+    font-size: 30px;
+    font-style: italic;
+    font-family: Brush Script MT, cursive;
+    height: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.time {
+    width: 100%;
+    position: static;
+    display: flex;
+    flex-direction: column;
+}
+
+.timeHours {
+    flex: 0 0 80%;
+    font-family: sans-serif;
+    font-size: 200px;
+    color: rgb(157, 155, 155);
+    position: static;
+    text-align: center;
+
+}
+.timeDate {
+    flex: 0 0 20%;
+    font-family: sans-serif;
+    font-size: 20px;
+    color: rgb(157, 155, 155);
+    text-align: center;
+    margin-top: -30px;
+}
+
+.content {
+    border-radius: 25px;
+    background-color: rgba(44, 44, 50, 0.3);
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.unisafka{
+    margin-left: 30px;
+    position: static;
+    width: 50%;
+    flex: 0 0 autp;
+}
+
+/* Add this section to your style.css file */
+.restaurant {
+    margin: 5px 0;
+    margin-right: 20px;
+    padding: 10px;
+    font-size: 18px;
+    color: #ffffff;
+    border-radius: 0 0 15px 15px;
+    background-color: hsl(202, 55%, 53%);
+}
+
+.restaurant-header {
+    margin-top: 15px;
+    margin-right: 20px;
+    font-size: 24px;
+    color: #fff;
+    background-color: rgba(13, 0, 255, 0.603);
+    background-blend-mode: darken;
+    border-radius: 15px 15px 0 0;
+    padding: 8px;
+    text-align: center;
+}
+
+
+.rightside{
+    border: 2px blue solid;
+    position: static;
+    margin-right: 30px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.weather {
+    border: 2px #eee solid;
+    position: static;
+    height: 200px;
+}
+
+.nysse {
+    border: 2px green solid;
+    position: static;
+    margin-top: 30px;
+    height: 300px;
+}
+
