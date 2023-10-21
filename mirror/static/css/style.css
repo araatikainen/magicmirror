@@ -47,11 +47,12 @@ body {
 
 .content {
     border-radius: 25px;
-    background-color: rgba(44, 44, 50, 0.3);
+    background-color: rgb(16, 14, 14);
     margin-top: 30px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    height: 700px;
 }
 
 .unisafka{
@@ -59,9 +60,10 @@ body {
     position: static;
     width: 50%;
     flex: 0 0 autp;
+    text-overflow: ellipsis;
 }
 
-/* Add this section to your style.css file */
+
 .restaurant {
     margin: 5px 0;
     margin-right: 20px;
@@ -69,7 +71,8 @@ body {
     font-size: 18px;
     color: #ffffff;
     border-radius: 0 0 15px 15px;
-    background-color: hsl(202, 55%, 53%);
+    background-color: hsl(202, 73%, 71%);
+    text-overflow: ellipsis;
 }
 
 .restaurant-header {
@@ -104,6 +107,6 @@ body {
     border: 2px green solid;
     position: static;
     margin-top: 30px;
-    height: 300px;
+    height: 500px;
 }
 

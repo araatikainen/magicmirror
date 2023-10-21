@@ -3,6 +3,7 @@ from datetime import datetime
 import time
 import random
 import getMenu
+import nysse
 import json
 
 app = Flask(__name__)
@@ -64,10 +65,19 @@ def menu():
 
     #return Response( json.dumps(restaurants), mimetype='application/json')
 
-app.route('/weather')
+@app.route('/weather')
 def get_weather():
     pass
 
+@app.route('/nysse')
+def get_nysse():
+    
+    data = nysse.getData()
+
+    if data == "Error":
+        return jsonify({"error" : "error, no data avaible"})
+    
+    
 
 if __name__ == '__main__':
     app.run(debug=True, threaded=True)
