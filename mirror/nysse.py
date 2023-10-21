@@ -23,7 +23,7 @@ headers = {
     "digitransit-subscription-key" : "774fe955df6d4cfc8411cdb67fc6969d"
 }
 
-# graphql for getting stop 0831 Opiskelija B and five next departures
+# graphql for getting stop 0831 Opiskelija A and five next departures
 body = """
     {
         stop(id: "tampere:0831" ) {
