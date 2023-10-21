@@ -8,41 +8,50 @@ Asiakas-ID
 Asiakassovelluksen salaisuus
 zint5yTdlHX1jAG3MKuZZ2SjcVyo6DlS
 Tallenna salaisuus turvalliseen paikkaan. Salaisuus ei ole näkyvillä täällä tämän jälkeen. Jos hävität salaisuuden, se pitää luoda uudelleen.
-"""
+
 id = "9765096899212087"
 apiKey = "zint5yTdlHX1jAG3MKuZZ2SjcVyo6DlS"
-
 url = "https://data.waltti.fi"
-
-tripUrl = url + "/tampere/api/gtfsrealtime/v1.0/feed/tripupdate"
-posUrl = url + "/tampere/api/gtfsrealtime/v1.0/feed/vehicleposition"
-alertUrl = url + "/tampere/api/gtfsrealtime/v1.0/feed/servicealert"
+"""
 
 
-def getTripData():
-    response = requests.get(tripUrl, auth=(id, apiKey))
-    print("response code (getTripData): " + str(response.status_code))
-    return response.text
+url = 'https://api.digitransit.fi/routing/v1/routers/waltti/index/graphql'
+name = 'digitransit-developer-api'
+key = '774fe955df6d4cfc8411cdb67fc6969d'
 
-def getPosData():
-    response = requests.get(posUrl, auth=(id, apiKey))
-    print("response code (getPosData): " + str(response.status_code))
-    return response.text
+headers = {
+    "digitransit-subscription-key" : "774fe955df6d4cfc8411cdb67fc6969d"
+}
 
-def getAlertData():
-    response = requests.get(alertUrl, auth=(id, apiKey))
-    print("response code (getAlertData): " + str(response.status_code))
-    return response.text
+# graphql for getting stop 0831 Opiskelija B and five next departures
+body = """
+    {
+        stop(id: "tampere:0831" ) {
+          name
+          code
+          routes {
+            shortName
+          }
+          stoptimesWithoutPatterns(numberOfDepartures: 5) {
+          scheduledArrival
+          }
+        }
+    }
+    """
 
-# change string to json
+# get data from url using graphlq body and headers 
+# return json object
+def getData(url, body):
+    
+    response = requests.post(url=url, json={"query": body}, headers=headers)
+    print("responsecode: ", response.status_code)
+    if response.status_code == 200:
+        return json.loads(response.text).get('data').get('stop')
+    else:
+        return "Error"
 
-#tripData = json.loads(getTripData())
-#posData = json.loads(getPosData())
-#alertData = json.loads(getAlertData())
+data = getData(url, body)
+print(data)
 
-tripData = getTripData()
-print(tripData)
-print(isinstance(tripData, dict))
-#print(tripData)
-#print(posData)
-#print(alertData)
+print(data.get('stoptimesWithoutPatterns'))
+
