@@ -35,16 +35,17 @@ def phrases():
 def menu():
     # get data from getMenu.py
     # get only once a day and if error try 5x with 5 min intervals
-    # Sunday and Saturday return "No menu today"
+    # Sunday return "No menu today"
 
     # lisää error caset version ja url metodeihi ja tänne error handle
 
     date = getMenu.get_date()
-
-    if date[2] == "Sat" or date[2] == "Sun":
+    print("date: ", date)
+    if date[2] == "Sun":
         return jsonify({"error": "No menu today"})
     
     version = getMenu.get_version(date)
+    print("test")
     url = getMenu.get_url(date, version)
 
     # restaurant contains res data of all tty restaurants in a list
@@ -61,12 +62,13 @@ def menu():
         }
         restaurants.append(restaurant_info)
 
+    print("test")
     return jsonify(restaurants)  
 
     #return Response( json.dumps(restaurants), mimetype='application/json')
 
 @app.route('/weather')
-def get_weather():
+def weather():
     pass
 
 @app.route('/nysse')
@@ -77,7 +79,19 @@ def get_nysse():
     if data == "Error":
         return jsonify({"error" : "error, no data avaible"})
     
+    # get only the next five departures
+    # departure times are shown in seconds, change it to hour:minute
     
+    stopName = data.get('name')
+    route =f" {data.get('routes')[0].get('longName')}"
+    
+    departures = []
+    for i in data.get('stoptimesWithoutPatterns'):
+        departures.append(i.get('scheduledArrival'))
+    
+    return jsonify({"stopName": stopName, "route": route, "departures": departures})
 
+    
+    
 if __name__ == '__main__':
     app.run(debug=True, threaded=True)

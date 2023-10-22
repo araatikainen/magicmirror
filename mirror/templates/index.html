@@ -39,7 +39,12 @@
             </div>
             
             <div class="nysse">
-                <div class="timetable" id="table">nysse</div>
+                <div class="nysse-header" id="route">Route</div>
+                <div class="departure" >nysse</div>
+                <div class="departure" >nysse</div>
+                <div class="departure" >nysse</div>
+                <div class="departure" >nysse</div>
+                <div class="departure" >nysse</div>
             </div>
         </div>
    </div>
@@ -62,6 +67,7 @@
         }, 1000);  
 </script>
 <script>
+    // 10 minutes in milliseconds 600000
     var phrase = document.getElementById("phrase");
     setInterval(() => {
         fetch("{{ url_for('phrases')}}")
@@ -73,7 +79,16 @@
     }, 600000 )
 </script>
 <script>
-    
+
+    // if sunday, show "closed" for all restaurants
+    const today = new Date().getDay();
+    if (today == 0) {
+        const restaurantElements = document.getElementsByClassName('restaurant');
+        for (let i = 0; i < restaurantElements.length; i++) {
+            restaurantElements[i].innerHTML = "Closed";
+        }
+    }
+
     // check if local storage has been updated today
     const lastExecuted = localStorage.getItem('lastExecuted');
     const timeNow = new Date().getTime();
@@ -114,8 +129,28 @@
 </script>
 
 <script>
+    // minute in milliseconds 60000
 
-    var table = document.getElementById('table');
+    
+    setInterval(() => {
+        fetch("{{ url_for('get_nysse') }}")
+        .then(response => response.json())
+        .then(data => {
+            console.log("Data received:",data);
+            // get routes last element
+            var route = data.route;
+            console.log(route);
+            var header = document.getElementById("route");
+            header.innerHTML = header;
+
+            data.departures.forEach((departure, index) => {
+                var departureElement = document.getElementsByClassName("departure")[index];
+                departureElement.innerHTML = departure;
+            });
+            
+            })
+        
+    }, 60000);
 </script>
 
 </body>

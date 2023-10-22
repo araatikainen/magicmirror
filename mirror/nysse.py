@@ -31,6 +31,7 @@ body = """
           code
           routes {
             shortName
+            longName
           }
           stoptimesWithoutPatterns(numberOfDepartures: 5) {
           scheduledArrival
@@ -41,17 +42,40 @@ body = """
 
 # get data from url using graphlq body and headers 
 # return json object
-def getData(url, body):
-    
+def getData():
+    url = 'https://api.digitransit.fi/routing/v1/routers/waltti/index/graphql'
+    body = """
+        {
+            stop(id: "tampere:0831" ) {
+            name
+            code
+            routes {
+                shortName
+                longName
+            }
+            stoptimesWithoutPatterns(numberOfDepartures: 5) {
+            scheduledArrival
+            }
+            }
+        }
+        """
     response = requests.post(url=url, json={"query": body}, headers=headers)
-    print("responsecode: ", response.status_code)
+    #print("responsecode: ", response.status_code)
     if response.status_code == 200:
         return json.loads(response.text).get('data').get('stop')
     else:
         return "Error"
 
+"""
 data = getData(url, body)
 print(data)
 
 print(data.get('stoptimesWithoutPatterns'))
 
+print(data.get('name'))
+print(data.get('routes')[0].get('longName'))
+for i in data.get('stoptimesWithoutPatterns'):
+    hours = int(i.get('scheduledArrival'))//(60*60)
+    minutes = int(i.get('scheduledArrival'))//60 - hours*60
+    print(hours, ":", minutes)
+"""
