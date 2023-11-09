@@ -45,11 +45,11 @@
             
             <div class="nysse">
                 <div class="nysse-header" id="route">Route</div>
-                <div class="departure" >nysse</div>
-                <div class="departure" >nysse</div>
-                <div class="departure" >nysse</div>
-                <div class="departure" >nysse</div>
-                <div class="departure" >nysse</div>
+                <div class="departure" id="dep0" >nysse0</div>
+                <div class="departure" id="dep1">nysse1</div>
+                <div class="departure" id="dep2">nysse2</div>
+                <div class="departure" id="dep3">nysse3</div>
+                <div class="departure" id="dep4">nysse4</div>
             </div>
         </div>
    </div>
@@ -148,20 +148,25 @@
         .then(response => response.json())
         .then(data => {
             console.log("Data received:",data);
+
             // get routes last element
             var route = data.route;
             console.log(route);
+            console.log(JSON.stringify(route.shortName));
             var header = document.getElementById("route");
-            header.innerHTML = header;
+            header.innerHTML = `${route.shortName} - ${route.longName}`;
+            console.log(route.shortName);
 
-            //data.departures.forEach((departure, index) => {
-            //var departureElement = document.getElementsByClassName("departure")[index];
-            //    departureElement.innerHTML = departure;
-            //});
+            // get departures
+            data.departures.forEach((departure, index) => {
+                var departureElement = document.getElementById("dep" + index.toString());
+                console.log(departureElement);
+                departureElement.innerHTML = departure.scheduledArrival;
+            });
             
             })
         
-    }, 60000);
+    }, 6000);
 </script>
 
 

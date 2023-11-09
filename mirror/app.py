@@ -70,7 +70,7 @@ def menu():
     #return Response( json.dumps(restaurants), mimetype='application/json')
 
 @app.route('/weather')
-def weather():
+def get_weather():
     
     weatherData = getWeather.getWeather()
     
@@ -91,7 +91,7 @@ def get_nysse():
     # departure times are shown in seconds, change it to hour:minute
     
     stopName = data.get('name')
-    route =f" {data.get('routes')[0].get('longName')}"
+    route =f" {data.get('routes')[0]}"
     
     departures = []
     for i in data.get('stoptimesWithoutPatterns'):
