@@ -4,7 +4,9 @@ import time
 import random
 import getMenu
 import nysse
+import getWeather
 import json
+
 
 app = Flask(__name__)
 
@@ -69,7 +71,13 @@ def menu():
 
 @app.route('/weather')
 def weather():
-    pass
+    
+    weatherData = getWeather.getWeather()
+    
+    if weatherData == "Error":
+        return jsonify({"error" : "error, no data avaible"})
+    
+    return jsonify(weatherData)
 
 @app.route('/nysse')
 def get_nysse():

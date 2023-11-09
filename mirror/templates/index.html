@@ -35,7 +35,12 @@
        <div class="rightside">
 
            <div class="weather">
-               <div class="temp" id="temp"> weather</div>
+                <div class="temp" id="now"> weather</div>
+                <div class="temp" id="3h"> weather</div>
+                <div class="temp" id="6h"> weather</div>
+                <div class="temp" id="9h"> weather</div>
+                <div class="temp" id="12h"> weather</div>
+
             </div>
             
             <div class="nysse">
@@ -94,6 +99,11 @@
     const timeNow = new Date().getTime();
     const dayMilliSecs = 1000 * 60 * 60 * 24;
 
+    const restaurantName ="";
+    const isOpenToday = ""; 
+    const eatingHours = "";
+    const menuItems = "";
+
     console.log("Fetching menu data...");
     if(!lastExecuted || timeNow - lastExecuted < dayMilliSecs) {
 
@@ -124,6 +134,7 @@
         .catch(error => {
             console.error("Error fetching menu data:", error);
         });
+        
 
     }
 </script>
@@ -143,15 +154,32 @@
             var header = document.getElementById("route");
             header.innerHTML = header;
 
-            data.departures.forEach((departure, index) => {
-                var departureElement = document.getElementsByClassName("departure")[index];
-                departureElement.innerHTML = departure;
-            });
+            //data.departures.forEach((departure, index) => {
+            //var departureElement = document.getElementsByClassName("departure")[index];
+            //    departureElement.innerHTML = departure;
+            //});
             
             })
         
     }, 60000);
 </script>
 
+
+<script>
+    // hour in milliseconds 3600000
+    setInterval(() => {
+        fetch("{{ url_for('get_weather') }}")
+        .then(response => response.json())
+        .then(data => {
+            console.log("Data received:",data);
+            var now = document.getElementById("now");
+            var three = document.getElementById("3h");
+            var six = document.getElementById("6h");
+            var nine = document.getElementById("9h");
+            var twelve = document.getElementById("12h");
+
+        })
+    }, 3600000);
+</script>
 </body>
 </html>
