@@ -62,21 +62,16 @@ def getData():
     response = requests.post(url=url, json={"query": body}, headers=headers)
     #print("responsecode: ", response.status_code)
     if response.status_code == 200:
-        return json.loads(response.text).get('data').get('stop')
+
+        route = f"{json.loads(response.text).get('data').get('stop').get('routes')[0].get('longName')}"
+        stopName = f"{json.loads(response.text).get('data').get('stop').get('name')}"
+        departures = json.loads(response.text).get('data').get('stop').get('stoptimesWithoutPatterns')
+
+        depTimes = [i.get('scheduledArrival') for i in departures]
+
+        return {"stopName": stopName, "route": route, "departures": depTimes}
     else:
         return "Error"
 
-"""
-#test
-data = getData()
-print(data)
 
-print(data.get('stoptimesWithoutPatterns'))
 
-print(data.get('name'))
-print(data.get('routes')[0].get('longName'))
-for i in data.get('stoptimesWithoutPatterns'):
-    hours = int(i.get('scheduledArrival'))//(60*60)
-    minutes = int(i.get('scheduledArrival'))//60 - hours*60
-    print(hours, ":", minutes)
-"""
