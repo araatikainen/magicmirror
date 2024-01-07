@@ -81,7 +81,7 @@ class Restaurant:
     def __str__(self):
         return f"Restaurant: {self.name}\nOpen today: {self.open_today}\nEating hours: {self.eating_hours}\nMenu: {self.menu}"
     
-
+"""
 date = get_date()
 version = get_version(date)
 
@@ -96,5 +96,6 @@ dataDict = fetchData(url)
 print(dataDict.get("restaurants_tty").keys())
 restaurants = get_restaurants(dataDict)
 # Print the details of each restaurant
+"""
 
 
