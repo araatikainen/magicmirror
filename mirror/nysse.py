@@ -66,7 +66,8 @@ def getData():
     else:
         return "Error"
 
-
+"""
+#test
 data = getData()
 print(data)
 
@@ -78,3 +79,4 @@ for i in data.get('stoptimesWithoutPatterns'):
     hours = int(i.get('scheduledArrival'))//(60*60)
     minutes = int(i.get('scheduledArrival'))//60 - hours*60
     print(hours, ":", minutes)
+"""
