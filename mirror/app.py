@@ -19,6 +19,7 @@ with open('cheering_phrases.txt', 'r') as f:
 def index():
     return render_template("index.html")
 
+
 @app.route('/time_feed')
 def time_feed():
     def generate():
@@ -27,11 +28,13 @@ def time_feed():
             yield f"{current_time}\n{current_date}"
     return Response(generate(), mimetype='text/plain')
 
+
 @app.route('/phrases')
 def phrases():
 
     index = random.randint(0, len(lines)-1)
     return Response(f"{lines[index]}", mimetype='text')
+
 
 @app.route('/menu')
 def menu():
@@ -64,10 +67,8 @@ def menu():
         }
         restaurants.append(restaurant_info)
 
-    print("test")
     return jsonify(restaurants)  
 
-    #return Response( json.dumps(restaurants), mimetype='application/json')
 
 @app.route('/weather')
 def get_weather():
@@ -79,6 +80,7 @@ def get_weather():
     
     return jsonify(weatherData)
 
+
 @app.route('/nysse')
 def get_nysse():
     
@@ -87,17 +89,7 @@ def get_nysse():
     if data == "Error":
         return jsonify({"error" : "error, no data avaible"})
     
-    # get only the next five departures
-    # departure times are shown in seconds, change it to hour:minute
-    
-    stopName = data.get('name')
-    route =f" {data.get('routes')[0]}"
-    
-    departures = []
-    for i in data.get('stoptimesWithoutPatterns'):
-        departures.append(i.get('scheduledArrival'))
-    
-    return jsonify({"stopName": stopName, "route": route, "departures": departures})
+    return jsonify(data)
 
     
     

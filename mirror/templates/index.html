@@ -32,31 +32,108 @@
         <div class="restaurant" id="reaktori"></div>
     </div>
        
-       <div class="rightside">
+    <div class="rightside">
 
-           <div class="weather">
-                <div class="temp" id="now"> weather</div>
-                <div class="temp" id="3h"> weather</div>
-                <div class="temp" id="6h"> weather</div>
-                <div class="temp" id="9h"> weather</div>
-                <div class="temp" id="12h"> weather</div>
+        <div class="weather-icons">
 
+            <div class="time-icon" id="timeIcon" >
+                <img src="{{ url_for('static', filename= 'img/time.png') }}" style="position:absolute;" >
             </div>
-            
-            <div class="nysse">
-                <div class="nysse-header" id="route">Route</div>
-                <div class="departure" id="dep0" >nysse0</div>
-                <div class="departure" id="dep1">nysse1</div>
-                <div class="departure" id="dep2">nysse2</div>
-                <div class="departure" id="dep3">nysse3</div>
-                <div class="departure" id="dep4">nysse4</div>
+            <div class="temp-icon" id="tempIcon">
+                <img id="tempImg" src="" style="position: absolute;">
+            </div>
+
+            <div class="rain-icon" id="rainIcon">
+                <img src="{{ url_for('static', filename= 'img/rain.png') }}" style="position: absolute;">
+            </div>
+            <div class="wind-icon" id="windIcon">
+                <img src="{{ url_for('static', filename= 'img/windDirection.png') }}" style="position: absolute; rotate: 45deg;">
+            </div>
+            <div class="windSpeed-icon" id="speedIcon">
+                <img src="{{ url_for('static', filename= 'img/windSpeed.png') }}" style="position: absolute;">
             </div>
         </div>
+        
+        <div class="weather">
+            
+
+            <div class="timeW-header" id="time">
+                <div class="timeWeather" id="now0h">Now</div>
+                <div class="timeWeather" id="now3h">3h</div>
+                <div class="timeWeather" id="now6h">6h</div>
+                <div class="timeWeather" id="now9h">9h</div>
+                <div class="timeWeather" id="now12h">12h</div>
+            </div>
+            <div class="t-header" id="t">
+
+                <div class="temp" id="now0t"> t</div>
+                <div class="temp" id="now3t"> t</div>
+                <div class="temp" id="now6t"> t</div>
+                <div class="temp" id="now9t"> t</div>
+                <div class="temp" id="now12t">t</div>
+
+            </div>
+
+            <div class="r-header" id="r">
+
+                <div class="rain" id="now0r"> r</div>
+                <div class="rain" id="now3r"> r</div>
+                <div class="rain" id="now6r"> r</div>
+                <div class="rain" id="now9r"> r</div>
+                <div class="rain" id="now12r">r</div>
+
+            </div>
+
+            <div class="w-header" id="w">
+                
+                <div class="windDir" id="now0w">
+                    <img id="Wnow0w" src="" style="position: absolute;">
+                </div>
+                <div class="windDir" id="now3w">
+                    <img id="Wnow3w" src="" style="position: absolute;">
+                </div>
+                <div class="windDir" id="now6w"> 
+                    <img id="Wnow6w" src="" style="position: absolute;">
+                </div>
+                <div class="windDir" id="now9w"> 
+                    <img id="Wnow9w" src="" style="position: absolute;">
+                </div>
+                <div class="windDir" id="now12w"> 
+                    <img id="Wnow12w" src="" style="position: absolute;">
+                </div>
+                
+            </div>
+
+            <div class="s-header" id="s">
+                
+                <div class="windSpeed" id="now0s"> s</div>
+                <div class="windSpeed" id="now3s"> s</div>
+                <div class="windSpeed" id="now6s"> s</div>
+                <div class="windSpeed" id="now9s"> s</div>
+                <div class="windSpeed" id="now12s"> s</div>
+                
+            </div>
+
+
+        </div>
+
+        
+        <div class="nysse">
+            <div class="nysse-header" id="route">Route</div>
+            <div class="departure" id="dep0" >nysse0</div>
+            <div class="departure" id="dep1">nysse1</div>
+            <div class="departure" id="dep2">nysse2</div>
+            <div class="departure" id="dep3">nysse3</div>
+            <div class="departure" id="dep4">nysse4</div>
+        </div>
+    </div>
    </div>
 
    
 
 <script>
+    // script for clock and date
+
     var clock = document.getElementById("clock");
     var date = document.getElementById("date");
     setInterval(() => {
@@ -71,19 +148,28 @@
             });
         }, 1000);  
 </script>
+
 <script>
+    // script for phrase
+
     // 10 minutes in milliseconds 600000
     var phrase = document.getElementById("phrase");
-    setInterval(() => {
+
+    function setPhrase(){
         fetch("{{ url_for('phrases')}}")
         .then(response => {
             response.text().then(t => {
                 phrase.innerHTML = t
             })
-        })
-    }, 600000 )
+        });
+    }
+
+    setPhrase();
+    setInterval(setPhrase, 600000);
+
 </script>
 <script>
+    // script for menus for restaurants
 
     // if sunday, show "closed" for all restaurants
     const today = new Date().getDay();
@@ -140,51 +226,98 @@
 </script>
 
 <script>
-    // minute in milliseconds 60000
+    // script for nysse
 
-    
-    setInterval(() => {
+    // 6 min in milliseconds 360000
+
+    function setDepartureTimes(){
+
         fetch("{{ url_for('get_nysse') }}")
         .then(response => response.json())
         .then(data => {
             console.log("Data received:",data);
 
-            // get routes last element
-            var route = data.route;
-            console.log(route);
-            console.log(JSON.stringify(route.shortName));
+            
+            // Get route details
+            var route = data.route; 
+
+            // Update header with route details
             var header = document.getElementById("route");
-            header.innerHTML = `${route.shortName} - ${route.longName}`;
-            console.log(route.shortName);
+            header.innerHTML = `${route}`;
 
             // get departures
-            data.departures.forEach((departure, index) => {
-                var departureElement = document.getElementById("dep" + index.toString());
-                console.log(departureElement);
-                departureElement.innerHTML = departure.scheduledArrival;
-            });
+            var dep;
+            for (let i = 0; i < data.departures.length; i++) {
+                dep = document.getElementById("dep" + i.toString());
+                var hours = Math.floor(data.departures[i] / (60*60));
+                var minutes = Math.floor(data.departures[i] / 60) - hours*60;
+                dep.innerHTML = `${data.stopName} - ${hours}:${minutes}`;
             
-            })
-        
-    }, 6000);
+            }
+
+            dep.style.borderRadius = "0 0 15px 15px";
+
+        });
+    }
+    
+    setDepartureTimes();
+    setInterval(setDepartureTimes, 300000);
+    
 </script>
 
 
 <script>
+    // script for weather
+
+    function setWindDir(windDir, id) {
+        // wind direction in degrees and id for element
+        var windIcon = document.getElementById(id);
+        var imgUrl = "{{ url_for('static', filename= 'img/windDir.png') }}";
+        windIcon.src = imgUrl;
+
+        // rotate image to point to correct direction
+        windIcon.style.transform = `rotate(${windDir-180}deg)`;
+
+    }
+
+    // data format: hours:temperature:rain:wind_direction:windspeed
     // hour in milliseconds 3600000
-    setInterval(() => {
+    // fetch weather data when page loads
+
+    function setWeather(){
         fetch("{{ url_for('get_weather') }}")
         .then(response => response.json())
         .then(data => {
             console.log("Data received:",data);
-            var now = document.getElementById("now");
-            var three = document.getElementById("3h");
-            var six = document.getElementById("6h");
-            var nine = document.getElementById("9h");
-            var twelve = document.getElementById("12h");
+            var interval = 3;
+            for (let i = 0; i < data.length; i++) {
+                
+                var nowT = document.getElementById("now" + (i*interval).toString() + "t");
+                var nowW = document.getElementById("Wnow" + (i*interval).toString() + "w");
+                var nowR = document.getElementById("now" + (i*interval).toString() + "r");
+                var nowS = document.getElementById("now" + (i*interval).toString() + "s");
+                var nowH = document.getElementById("now" + (i*interval).toString() + "h");
+                
+                document.getElementById("now" + (i*interval).toString() + "t").innerHTML = `${data[i].temperature} °C`;
+                nowR.innerHTML = `${data[i].rain} mm`;
+                nowS.innerHTML = `${data[i].wind_speed} m/s`;
+                nowH.innerHTML = `${data[i].time}:00`;
+                setWindDir(data[i].wind_direction, "Wnow" + (i*interval).toString() + "w");
+                nowW.innerHTML = `${data[i].wind_direction}`;
+                
+            }
+            
+            if (data[0].temperature <= 0) {
+                document.getElementById("tempImg").src = "{{ url_for('static', filename= 'img/tempCold.png') }}";
+            } else {
+                document.getElementById("tempImg").src = "{{ url_for('static', filename= 'img/tempHot.png') }}";
+            }
+        });
+    }
 
-        })
-    }, 3600000);
+    setWeather();
+    setInterval(setWeather, 3600000);
 </script>
+
 </body>
 </html>
