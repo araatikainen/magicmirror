@@ -30,8 +30,8 @@ def get_version(date: list):
     #it needs year and week
     # return string version number
 
-    url = f"https://unisafka.fi/static/json/{date[0]}/{date[1]}/v.json"
-    #print("url: " + url)
+    url = f"https://unisafka.fi/static/json/{date[0]}/{str(int(date[1]))}/v.json"
+    print("url: " + url)
     response = requests.get(url)
     print("response code (get_version): " + str(response.status_code))
     return response.json().get("v")
@@ -39,7 +39,7 @@ def get_version(date: list):
 def get_url(date: list, version: str):
     #formalize url address and return it as string
 
-    return f"https://unisafka.fi/static/json/{date[0]}/{date[1]}/{version}/{date[2]}.json"
+    return f"https://unisafka.fi/static/json/{date[0]}/{str(int(date[1]))}/{version}/{date[2]}.json"
 
 
 
@@ -83,9 +83,9 @@ class Restaurant:
     
 """
 date = get_date()
+print("date: " + str(date))
 version = get_version(date)
 
-#print("date: " + str(date))
 #print("version: " + str(version))
 
 url = get_url(date, version)
@@ -97,5 +97,6 @@ print(dataDict.get("restaurants_tty").keys())
 restaurants = get_restaurants(dataDict)
 # Print the details of each restaurant
 """
+
 
 
