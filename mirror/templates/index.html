@@ -171,27 +171,23 @@
 <script>
     // script for menus for restaurants
 
-    /*
-    // if sunday, show "closed" for all restaurants
-    const today = new Date().getDay();
-    if (today == 0) {
-        const restaurantElements = document.getElementsByClassName('restaurant');
-        for (let i = 0; i < restaurantElements.length; i++) {
-            restaurantElements[i].innerHTML = "Closed";
+
+    function setMenus(){
+
+        // if sunday, show "closed" for all restaurants
+        const today = new Date().getDay();
+        if (today == 0) {
+            const restaurantElements = document.getElementsByClassName('restaurant');
+            for (let i = 0; i < restaurantElements.length; i++) {
+                restaurantElements[i].innerHTML = "Closed";
+            }
+            return;
         }
-    }
 
-    // check if local storage has been updated today
-    const lastExecuted = localStorage.getItem('lastExecuted');
-    const timeNow = new Date().getTime();
-    const dayMilliSecs = 1000 * 60 * 60 * 24;
-
-    console.log("Fetching menu data...");
-    if(!lastExecuted || timeNow - lastExecuted < dayMilliSecs) {
-
-    fetch("{{ url_for('menu')}}")
-        .then(response => response.json())  // Parse JSON response
+        fetch("{{ url_for('menu')}}")
+        .then(response => response.json())
         .then(data => {
+            console.log("Data received:",data);
             // Iterate through restaurant data and update HTML elements
             data.forEach(restaurant => {
                 const restaurantName = restaurant.name.includes('Konehuone') ? "Konehuone" : restaurant.name;
@@ -202,66 +198,25 @@
                 // Update HTML elements with restaurant information
                 const restaurantElement = document.getElementById(restaurantName.toLowerCase());
                 const restaurantHeaderElement = document.getElementById(restaurantName.toLowerCase() + "-header");
-                if (restaurantElement && restaurantHeaderElement) {
-                    restaurantHeaderElement.innerHTML =
-                    `<strong>${restaurantName}</strong> ${eatingHours}<br>`;
-
+                    
+                if(isOpenToday){
                     restaurantElement.innerHTML = menuItems.map(item => item[1]).join('<br>');
-                }   
-            });
+                    restaurantHeaderElement.innerHTML =
+                    `<strong>${restaurantName}</strong> ${eatingHours}<br>`;}
 
-            // store current time to local storage
-            localStorage.setItem('lastExecuted', timeNow);
-        })
-        .catch(error => {
-            console.error("Error fetching menu data:", error);
-        });
-        */
-
-        function setMenus(){
-
-            // if sunday, show "closed" for all restaurants
-            const today = new Date().getDay();
-            if (today == 0) {
-                const restaurantElements = document.getElementsByClassName('restaurant');
-                for (let i = 0; i < restaurantElements.length; i++) {
-                    restaurantElements[i].innerHTML = "Closed";
+                else{
+                    restaurantElement.innerHTML = "Closed";
+                    restaurantHeaderElement.innerHTML =
+                    `<strong>${restaurantName}</strong>`;
                 }
-                return;
-            }
-
-            fetch("{{ url_for('menu')}}")
-            .then(response => response.json())
-            .then(data => {
-                console.log("Data received:",data);
-                // Iterate through restaurant data and update HTML elements
-                data.forEach(restaurant => {
-                    const restaurantName = restaurant.name.includes('Konehuone') ? "Konehuone" : restaurant.name;
-                    const isOpenToday = restaurant.open_today;
-                    const eatingHours = restaurant.eating_hours;
-                    const menuItems = restaurant.menu;
-    
-                    // Update HTML elements with restaurant information
-                    const restaurantElement = document.getElementById(restaurantName.toLowerCase());
-                    const restaurantHeaderElement = document.getElementById(restaurantName.toLowerCase() + "-header");
-                        
-                    if(isOpenToday){
-                        restaurantElement.innerHTML = menuItems.map(item => item[1]).join('<br>');
-                        restaurantHeaderElement.innerHTML =
-                        `<strong>${restaurantName}</strong> ${eatingHours}<br>`;}
-
-                    else{
-                        restaurantElement.innerHTML = "Closed";
-                        restaurantHeaderElement.innerHTML =
-                        `<strong>${restaurantName}</strong>`;
-                    }
-                       
-                });
+                    
             });
-        }
+        });
+    }
 
-        setMenus();
-        
+
+    setMenus();
+    setInterval(setMenus, 21600000);
 
     
 </script>
@@ -269,7 +224,7 @@
 <script>
     // script for nysse
 
-    // 6 min in milliseconds 360000
+    // 5 min in milliseconds 300000
 
     function setDepartureTimes(){
 
