@@ -36,6 +36,12 @@ Nysse -- [api.digitransit](https://digitransit.fi/en/developers/apis/)
 &nbsp;
 
 Näytön värimaailmassa on käytetty tummia taustavärejä näytön tekstien erottuvuuden vuoksi. Lisäksi peilautuvuutta voi säädellä helposti vaihtelemalla näytönkirkkautta ja taustavalon määrää.\
+&nbsp;\
+Kuva peilistä:
+&nbsp;\
+![IMG_1747](https://github.com/araatikainen/magicmirror/assets/107348864/2ab5fc59-2318-4c72-a5d2-94850ce1e47a)
+
+&nbsp;\
 Screenshot näytöstä:\
 &nbsp;\
 ![image](https://github.com/araatikainen/magicmirror/assets/107348864/ca74eb8e-d767-45ac-963b-eff6346aafc2)
